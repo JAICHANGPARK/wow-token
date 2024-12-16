@@ -23,6 +23,7 @@ void main() {
   // [Document] renders the root document structure (<html>, <head> and <body>)
   // with the provided parameters and components.
   runApp(Document(
+    
     title: 'wow_token',
     styles: [
       // Special import rule to include to another css file.
@@ -35,6 +36,7 @@ void main() {
           .box(margin: EdgeInsets.zero, padding: EdgeInsets.zero),
       css('h1').text(fontSize: 4.rem).box(margin: EdgeInsets.unset),
     ],
+    base: "wow-token",
     body: App(),
   ));
 }
