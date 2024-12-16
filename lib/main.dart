@@ -36,7 +36,7 @@ void main() {
           .box(margin: EdgeInsets.zero, padding: EdgeInsets.zero),
       css('h1').text(fontSize: 4.rem).box(margin: EdgeInsets.unset),
     ],
-    base: "wow-token",
+    base: "https://jaichangpark.github.io/wow-token",
     body: App(),
   ));
 }
