@@ -13,8 +13,8 @@ class Header extends StatelessComponent {
     yield header([
       nav([
         for (var route in [
-          (label: 'Home', path: '/'),
-          (label: 'About', path: '/about'),
+          (label: 'Home', path: '/wow-token'),
+          (label: 'About', path: 'wow-token/about'),
         ])
           div(classes: activePath == route.path ? 'active' : null, [
             Link(to: route.path, child: text(route.label)),
