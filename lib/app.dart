@@ -23,9 +23,11 @@ class App extends StatelessComponent {
     // Renders a <div class="main"> html element with children.
     yield div(classes: 'main', [
       const Header(),
-      Router(routes: [
-        Route(path: '/', title: 'Home', builder: (context, state) => const Home()),
-        Route(path: '/about', title: 'About', builder: (context, state) => const About()),
+      Router(
+        
+        routes: [
+        Route(path: '/wow-token/', title: 'Home', builder: (context, state) => const Home()),
+        Route(path: '/wow-token/about', title: 'About', builder: (context, state) => const About()),
       ]),
     ]);
   }
