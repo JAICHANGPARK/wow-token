@@ -26,6 +26,7 @@ class App extends StatelessComponent {
       Router(
         
         routes: [
+        Route(path: '/', title: 'Home', builder: (context, state) => const Home()),
         Route(path: '/wow-token/', title: 'Home', builder: (context, state) => const Home()),
         Route(path: '/wow-token/about', title: 'About', builder: (context, state) => const About()),
       ]),
