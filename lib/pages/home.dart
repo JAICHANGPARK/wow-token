@@ -1,6 +1,7 @@
 import 'package:jaspr/jaspr.dart';
 
 import '../components/counter.dart';
+import '../components/simple_card.dart';
 
 // By using the @client annotation this component will be automatically compiled to javascript and mounted
 // on the client. Therefore:
@@ -34,11 +35,12 @@ class HomeState extends State<Home> {
   @override
   Iterable<Component> build(BuildContext context) sync* {
     yield section([
-      img(src: 'images/logo.png', width: 80),
-      h1([text('Welcome')]),
-      p([text('You successfully create a new Jaspr site.')]),
-      div(styles: Styles.box(height: 100.px), []),
-      const Counter(),
+      // img(src: 'images/logo.png', width: 80),
+      // h1([text('Welcome')]),
+      // p([text('You successfully create a new Jaspr site.')]),
+      // div(styles: Styles.box(height: 100.px), []),
+      // const Counter(),
+      SimpleCard(title: "Devfest", message: "2024")
     ]);
   }
 }
