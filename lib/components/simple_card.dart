@@ -10,9 +10,9 @@ class SimpleCard extends StatelessComponent {
   Iterable<Component> build(BuildContext context) sync* {
     yield div(classes: 'p-6 max-w-sm mx-auto bg-white rounded-xl shadow-lg flex items-center space-x-4', [
       div(classes: 'shrink-0', [
-        img(classes: 'h-12 w-12', src: '/img/logo.svg', alt: '$title Logo'),
+        // img(classes: 'h-12 w-12', src: '/img/logo.svg', alt: '$title Logo'),
       ]),
-      div([
+      div(classes: 'p-8', [
         div(classes: 'text-xl font-medium text-black', [text(title)]),
         p(classes: 'text-slate-500', [text(message)]),
       ])
