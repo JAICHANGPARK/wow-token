@@ -1,6 +1,7 @@
 import 'package:jaspr/jaspr.dart';
 
 import '../components/counter.dart';
+import '../components/fab.dart';
 import '../components/simple_card.dart';
 
 // By using the @client annotation this component will be automatically compiled to javascript and mounted
@@ -40,7 +41,8 @@ class HomeState extends State<Home> {
       // p([text('You successfully create a new Jaspr site.')]),
       // div(styles: Styles.box(height: 100.px), []),
       // const Counter(),
-      SimpleCard(title: "Devfest", message: "2024")
+      SimpleCard(title: "Devfest", message: "2024"),
+      FabButtonComponent()
     ]);
   }
 }
