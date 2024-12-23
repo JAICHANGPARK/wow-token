@@ -1,5 +1,7 @@
 import 'package:jaspr/jaspr.dart';
+import 'package:jaspr_riverpod/jaspr_riverpod.dart';
 import 'package:jaspr_router/jaspr_router.dart';
+import 'package:wow_token/components/counter.dart';
 
 import 'components/header.dart';
 import 'pages/about.dart';
@@ -9,6 +11,7 @@ import 'pages/home.dart';
 //
 // By using multi-page routing, this component will only be built on the server during pre-rendering and
 // **not** executed on the client. Instead only the nested [Home] and [About] components will be mounted on the client.
+@client
 class App extends StatelessComponent {
   const App({super.key});
 
@@ -21,16 +24,27 @@ class App extends StatelessComponent {
     // create and return a [List] here.
 
     // Renders a <div class="main"> html element with children.
-    yield div(classes: 'main', [
-      const Header(),
-      Router(
+    yield ProviderScope(
+        child: Counter2()
         
-        routes: [
-        Route(path: '/', title: 'Home', builder: (context, state) => const Home()),
-        Route(path: '/wow-token', title: 'Home', builder: (context, state) => const Home()),
-        Route(path: '/wow-token/about', title: 'About', builder: (context, state) => const About()),
-      ]),
-    ]);
+    //      div(classes: 'main', [
+    //   const Header(),
+    //   Router(routes: [
+    //     Route(
+    //         path: '/',
+    //         title: 'Home',
+    //         builder: (context, state) => const Home()),
+    //     Route(
+    //         path: '/wow-token',
+    //         title: 'Home',
+    //         builder: (context, state) => const Home()),
+    //     Route(
+    //         path: '/wow-token/about',
+    //         title: 'About',
+    //         builder: (context, state) => const About()),
+    //   ]),
+    // ])
+    );
   }
 
   // Defines the css styles for elements of this component.
@@ -41,12 +55,14 @@ class App extends StatelessComponent {
   static final styles = [
     css('.main', [
       // The '&' refers to the parent selector of a nested style rules.
-      css('&').box(height: 100.vh).flexbox(direction: FlexDirection.column, wrap: FlexWrap.wrap),
+      css('&')
+          .box(height: 100.vh)
+          .flexbox(direction: FlexDirection.column, wrap: FlexWrap.wrap),
       css('section').flexItem(flex: Flex(grow: 1)).flexbox(
-        direction: FlexDirection.column,
-        justifyContent: JustifyContent.center,
-        alignItems: AlignItems.center,
-      ),
+            direction: FlexDirection.column,
+            justifyContent: JustifyContent.center,
+            alignItems: AlignItems.center,
+          ),
     ]),
   ];
 }
